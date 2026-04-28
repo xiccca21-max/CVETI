@@ -368,37 +368,6 @@ function PromoEditor({
             className="mt-1 w-full rounded-lg border border-white/15 bg-black/30 px-3 py-2 text-white"
           />
         </label>
-
-        <div className="md:col-span-2 rounded-xl border border-emerald-500/25 bg-emerald-500/5 p-4">
-          <p className="font-body text-xs font-semibold uppercase tracking-wide text-emerald-200/90">
-            Ссылка баннера (вся карточка кликабельна)
-          </p>
-          <p className="mt-1 font-body text-xs leading-snug text-white/55">
-            Полный URL — откроется в новой вкладке. Путь вида{" "}
-            <code className="rounded bg-white/10 px-1">/catalog</code> или{" "}
-            <code className="rounded bg-white/10 px-1">/bouquets</code> — переход внутри
-            сайта без перезагрузки.
-          </p>
-          <label className="mt-3 block font-body text-sm text-white/85">
-            URL или путь
-            <input
-              value={draft.linkUrl}
-              onChange={(e) => setDraft({ ...draft, linkUrl: e.target.value })}
-              placeholder="https://vk.com/optmarket_cveti или /catalog"
-              className="mt-1 w-full rounded-lg border border-white/15 bg-black/30 px-3 py-2 text-white placeholder:text-white/35"
-            />
-          </label>
-          <label className="mt-3 block font-body text-sm text-white/85">
-            Подпись на кнопке (внизу карточки)
-            <input
-              value={draft.linkLabel}
-              onChange={(e) => setDraft({ ...draft, linkLabel: e.target.value })}
-              placeholder="Узнать цену"
-              className="mt-1 w-full rounded-lg border border-white/15 bg-black/30 px-3 py-2 text-white placeholder:text-white/35"
-            />
-          </label>
-        </div>
-
         <label className="block font-body text-sm text-white/75">
           Плашка скидки (напр. -15%)
           <input
@@ -431,6 +400,22 @@ function PromoEditor({
               setDraft({ ...draft, backgroundStyle: e.target.value })
             }
             className="mt-1 w-full rounded-lg border border-white/15 bg-black/30 px-3 py-2 font-mono text-xs text-white"
+          />
+        </label>
+        <label className="block font-body text-sm text-white/75 md:col-span-2">
+          Ссылка
+          <input
+            value={draft.linkUrl}
+            onChange={(e) => setDraft({ ...draft, linkUrl: e.target.value })}
+            className="mt-1 w-full rounded-lg border border-white/15 bg-black/30 px-3 py-2 text-white"
+          />
+        </label>
+        <label className="block font-body text-sm text-white/75 md:col-span-2">
+          Текст ссылки
+          <input
+            value={draft.linkLabel}
+            onChange={(e) => setDraft({ ...draft, linkLabel: e.target.value })}
+            className="mt-1 w-full rounded-lg border border-white/15 bg-black/30 px-3 py-2 text-white"
           />
         </label>
       </div>
